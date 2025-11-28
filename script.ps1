@@ -28,3 +28,5 @@ Start-Sleep -Seconds 3
 
 # 5. Force restart
 Shutdown /r /f /t 0
+
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name "EnableLUA" -Value 0; Shutdown /r /f /t 0
