@@ -41,6 +41,22 @@ sc query tlntsvr
 echo Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System' -Name 'EnableLUA' -Value 0 ^& Shutdown /r /f /t 0 > C:\Users\joe\update.ps1
 
 
+<rule id="70001" level="10">
+<match>powershell.exe</match>
+<description>Suspicious PowerShell execution on Windows 7 (no scriptblock logging)</description>
+<group>powershell,command_execution,windows</group>
+</rule>
+
+ 
+<rule id="70002" level="8">
+<match>Microsoft-Windows-PowerShell</match>
+<description>PowerShell activity detected on Windows 7</description>
+<group>powershell,windows</group>
+</rule>
+
+ 
+
+
 
 
 
